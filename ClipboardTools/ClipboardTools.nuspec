@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>DXSdata</authors>
+    <owners>DXSdata</owners>
+    <projectUrl>http://www.dxsdata.com/2018/02/net-clipboard-tools/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Collection of tools for advanced handling of Clipboard data (virtual files), change notifications etc.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright DXSdata / MIT 2018</copyright>
+    <tags>.NET Framework Clipboard Tools Notification Virtual File Handling</tags>
+  </metadata>
+  <files>
+    <file src="bin\Debug\ClipboardTools.dll"  target="lib\net46\" />
+  </files>
+
+</package>

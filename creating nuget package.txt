@@ -1,0 +1,16 @@
+Unlike in .Net Core / Standard, Nuget option is not included in .NET Framework 4.6.1.
+
+
+Alternative:
+
+Download nuget.exe, then follow:
+https://docs.microsoft.com/en-us/nuget/guides/create-net-standard-packages-vs2015
+
+In short:
+- project properties: activate XML output
+- nuget spec
+- edit .nuspec file
+- nuget pack
+
+Updates:
+- nuget pack
