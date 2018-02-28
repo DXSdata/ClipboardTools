@@ -34,6 +34,10 @@ namespace ClipboardToolsSample
 
             try
             {
+                //some test properties
+                var containsEmClientEmail = VirtualFiles.ContainsEmclientEmail;
+                var containsOutlookEmail = VirtualFiles.ContainsOutlookEmail;
+
                 if (!checkBoxOutlook.Checked) //Default way
                 {
 
@@ -42,7 +46,7 @@ namespace ClipboardToolsSample
 
                     Log("Option 2: Get files saved to disk");
                     var files = VirtualFiles.GetVirtualFilesAsFiles();
-
+                    
                     foreach (var file in files)
                     {
                         Log("Saved file " + file.FullName);

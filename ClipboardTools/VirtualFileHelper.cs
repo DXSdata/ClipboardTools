@@ -53,6 +53,10 @@ namespace ClipboardTools
             iStream.Stat(out iStreamStat, 0);
             int iStreamSize = (int)iStreamStat.cbSize;
 
+            //prevent memoryexception
+            if (iStreamSize > 100000000)
+                return null;
+
             //read the data from the IStream into a managed byte array
             byte[] iStreamContent = new byte[iStreamSize];
             iStream.Read(iStreamContent, iStreamContent.Length, IntPtr.Zero);

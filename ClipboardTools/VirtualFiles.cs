@@ -17,6 +17,9 @@ namespace ClipboardTools
         private static List<FileInfo> savedFiles = new List<FileInfo>();
         private static List<MemoryStream> savedStreams = new List<MemoryStream>();
 
+        /// <summary>
+        /// True if Clipboard contains a file reference
+        /// </summary>
         public static bool ContainsVirtualFiles
         {
             get
@@ -27,7 +30,46 @@ namespace ClipboardTools
                 //    Clipboard.ContainsText())
                 //    return false;
 
+                //var test = Clipboard.GetDataObject();
+                //var test2 = test.GetFormats();
+
                 return Clipboard.ContainsData("FileGroupDescriptorW");
+            }
+        }
+
+        /// <summary>
+        /// True if Clipboard contains a mail copied from eM Client
+        /// </summary>
+        public static bool ContainsEmclientEmail
+        {
+            get
+            {
+                String [] neededFormats = new [] { "FileGroupDescriptorW", "FileContents", "System.String", "Preferred DropEffect", "HTML Format" };
+                var data = Clipboard.GetDataObject();
+                var formats = data.GetFormats();
+
+                if (neededFormats.All(o => formats.Contains(o)))
+                    return true;
+
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// True if Clipboard contains a mail copied from Outlook
+        /// </summary>
+        public static bool ContainsOutlookEmail
+        {
+            get
+            {
+                String[] neededFormats = new[] { "FileGroupDescriptorW", "FileContents", "System.String", "Text", "Csv", "RenPrivateSourceFolder", "RenPrivateMessages" };
+                var data = Clipboard.GetDataObject();
+                var formats = data.GetFormats();
+
+                if (neededFormats.All(o => formats.Contains(o)))
+                    return true;
+
+                return false;
             }
         }
 
