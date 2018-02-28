@@ -30,8 +30,8 @@ namespace ClipboardTools
                 //    Clipboard.ContainsText())
                 //    return false;
 
-                //var test = Clipboard.GetDataObject();
-                //var test2 = test.GetFormats();
+                var test = Clipboard.GetDataObject();
+                var test2 = test.GetFormats();
 
                 return Clipboard.ContainsData("FileGroupDescriptorW");
             }
@@ -44,7 +44,7 @@ namespace ClipboardTools
         {
             get
             {
-                String [] neededFormats = new [] { "FileGroupDescriptorW", "FileContents", "System.String", "Preferred DropEffect", "HTML Format" };
+                String [] neededFormats = new [] { "FileGroupDescriptorW", "FileContents", "Preferred DropEffect", "HTML Format" };
                 var data = Clipboard.GetDataObject();
                 var formats = data.GetFormats();
 
