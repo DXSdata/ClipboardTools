@@ -66,7 +66,7 @@ namespace ClipboardTools
                 var data = Clipboard.GetDataObject();
                 var formats = data.GetFormats();
 
-                if (neededFormats.All(o => formats.Contains(o)))
+                if (neededFormats.All(o => formats.Contains(o, StringComparer.InvariantCultureIgnoreCase)))
                     return true;
 
                 return false;
